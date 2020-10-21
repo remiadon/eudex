@@ -1,4 +1,4 @@
-import eudex
+from .core import eudex
 
 EUDEX_EXACT = [
     ("JAva", "jAva"),
@@ -29,15 +29,15 @@ EUDEX_MISMATCH = [
 
 def test_eudex_exact():
     for a, b in EUDEX_EXACT:
-        assert eudex.eudex(a) == eudex.eudex(b)
+        assert eudex(a) == eudex(b)
 
 
 def test_eudex_mismatch():
     for a, b in EUDEX_MISMATCH:
-        assert eudex.eudex(a) != eudex.eudex(b)
+        assert eudex(a) != eudex(b)
 
 
 def test_eudex_hash():
-    assert eudex.eudex("Guillaume") == 288230378836066816
-    assert eudex.eudex("Antoine") == 9511602490802442752
-    assert eudex.eudex("Carole") == 432345566928740352
+    assert eudex("Guillaume") == 288230378836066816
+    assert eudex("Antoine") == 9511602490802442752
+    assert eudex("Carole") == 432345566928740352

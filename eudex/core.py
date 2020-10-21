@@ -1,3 +1,7 @@
+# Author: Rémi Adon <remi.adon@gmail.com>
+# License: BSD 3 clause
+
+
 def binary_to_int(b):
     if isinstance(b, int):
         return b
