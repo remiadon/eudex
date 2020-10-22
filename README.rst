@@ -24,10 +24,10 @@ Example
 .. code-block:: python
 
    >>> from eudex import eudex
-   >>> eudex('Jesus'), eudex('Yesus')
-   (216172782115094804, 16429131440648880404)  # values in base 10 are very different
-   >>> bin(eudex('Jesus') ^ eudex('Yesus')).count('1') # number of one after xoring hashes
-   6  # very low distance, so words are similar !
+   >>> eudex('Jesus'), eudex('Yeezus')
+   (216172782115094804, 16429131440657269012)  # values in base 10 are very different
+   >>> bin(eudex('Jesus') ^ eudex('Yeezus')).count('1') # number of ones after xoring hashes
+   7  # very low distance, so words are similar !
 
 Features
 --------
