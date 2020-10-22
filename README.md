@@ -15,6 +15,16 @@ Eudex is about two orders of magnitude faster than Soundex, and several orders
 of magnitude faster than Levenshtein distance, making it feasible to run on
 large sets of strings in very short time.
 
+## Example
+
+```python
+>>> from eudex import eudex
+>>> eudex('Jesus'), eudex('Yesus')
+(216172782115094804, 16429131440648880404)  # values in base 10 are very different
+>>> sum(1 for _ in bin(eudex('Jesus') ^ eudex('Yesus')) if _ == '1') # number of one after xoring hashes
+6  # very low distance, so words are similar !
+```
+
 ## Features
 
 - High quality locality-sensitive **hashing based on pronunciation**.
@@ -69,12 +79,6 @@ It is tested on the English, Catalan, German, Spanish, Swedish, and Italian dict
 - Java: [jprante/elasticsearch-analysis-phonetic-eudex](https://github.com/jprante/elasticsearch-analysis-phonetic-eudex)
 - JavaScript: [Yomguithereal/talisman](https://github.com/Yomguithereal/talisman/blob/master/src/phonetics/eudex.js)
 
-## Example
-
-```python
->>> from eudex import eudex
->>> # TODO
-```
 
 ## How does Eudex work ?
 see [how_it_works.md](how_it_works.md)
