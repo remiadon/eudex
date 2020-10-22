@@ -26,7 +26,7 @@ Example
    >>> from eudex import eudex
    >>> eudex('Jesus'), eudex('Yesus')
    (216172782115094804, 16429131440648880404)  # values in base 10 are very different
-   >>> sum(1 for _ in bin(eudex('Jesus') ^ eudex('Yesus')) if _ == '1') # number of one after xoring hashes
+   >>> bin(eudex('Jesus') ^ eudex('Yesus')).count('1') # number of one after xoring hashes
    6  # very low distance, so words are similar !
 
 Features
