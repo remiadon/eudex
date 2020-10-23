@@ -209,7 +209,8 @@ def eudex(sequence):
 
     Returns
     -------
-    res : str
+    res : int
+        a 64-bit integer, i.e the eudex hash corresponding to the input string
     """
     entry = ((char_code(sequence) | 32) - A) & 0xFF if sequence else 0
     first_byte = 0
